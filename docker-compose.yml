@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  bot:
+    build: .
+    container_name: bot_service
+    command: python3 bot.py
+    volumes:
+      - .:/app
+    restart: always
+
+  savedata:
+    build: .
+    container_name: savedata_service
+    command: python3 parser/saveData.py
+    volumes:
+      - .:/app
+    restart: always
