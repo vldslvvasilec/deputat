@@ -119,7 +119,7 @@ async def main():
 
     # Интервал работы: с 08:30 до 17:00, с понедельника по пятницу
     work_start = time(5, 30)
-    work_end = time(17, 00)
+    work_end = time(17, 30)
 
     # Запускаем задачу очистки пользователей в фоне
     asyncio.create_task(cleanup_expired_users())
