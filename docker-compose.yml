@@ -8,6 +8,9 @@ services:
     volumes:
       - .:/app
     restart: always
+    networks:
+      deputat_net:
+        ipv4_address: 192.168.1.10
 
   savedata:
     build: .
@@ -16,3 +19,13 @@ services:
     volumes:
       - .:/app
     restart: always
+    networks:
+      deputat_net:
+        ipv4_address: 192.168.1.11
+
+networks:
+  deputat_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
